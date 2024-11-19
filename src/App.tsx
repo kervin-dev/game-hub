@@ -14,12 +14,10 @@ function App() {
         <GridItem area="nav">
           <NavBar></NavBar>
         </GridItem>
-        <GridItem hideBelow="lg" area="aside" bg="teal">
+        <GridItem hideBelow="lg" area="aside">
           Aside
         </GridItem>
-        <GridItem area="main" bg="magenta">
-          Main
-        </GridItem>
+        <GridItem area="main">Main</GridItem>
       </Grid>
     </>
   );
