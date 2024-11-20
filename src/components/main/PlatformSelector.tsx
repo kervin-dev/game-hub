@@ -3,7 +3,12 @@ import usePlatforms, { Platform } from "../../hooks/usePlatforms";
 import { BsChevronDown } from "react-icons/bs";
 import { Button } from "../ui/button";
 
-const PlatformSelector = () => {
+interface Props {
+  onSelectPlatform: (platform: Platform) => void;
+  setSelectedPlatform: Platform | null;
+}
+
+const PlatformSelector = ({ onSelectPlatform, setSelectedPlatform }: Props) => {
   const { data } = usePlatforms();
 
   return (
@@ -11,7 +16,7 @@ const PlatformSelector = () => {
       {/* @ts-ignore */}
       <MenuTrigger asChild>
         <Button variant="subtle" size="sm">
-          Platform
+          {setSelectedPlatform?.name || "Platform"}
           <BsChevronDown />
         </Button>
       </MenuTrigger>
@@ -19,7 +24,11 @@ const PlatformSelector = () => {
       <MenuContent>
         {data.map((platform) => (
           // @ts-ignore
-          <MenuItem key={platform.id} value={platform.slug}>
+          <MenuItem
+            key={platform.id}
+            value={platform.slug}
+            onClick={() => onSelectPlatform(platform)}
+          >
             {platform.name}
           </MenuItem>
         ))}
