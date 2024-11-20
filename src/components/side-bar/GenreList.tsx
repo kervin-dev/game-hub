@@ -6,9 +6,10 @@ import { Button } from "../ui/button";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, error, isLoading } = useGenre();
   const listSkeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -34,7 +35,8 @@ const GenreList = ({ onSelectGenre }: Props) => {
                 src={getCroppedImageUrl(genre.image_background)}
               />
               <Button
-                fontSize="lg"
+                fontSize={selectedGenre?.id === genre.id ? "3xl" : "lg"}
+                fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
                 variant={"plain"}
                 paddingX={"-1.5"}
                 onClick={() => onSelectGenre(genre)}
