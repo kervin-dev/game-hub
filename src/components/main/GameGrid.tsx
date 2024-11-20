@@ -3,10 +3,11 @@ import useGames from "../../hooks/useGames";
 import GameCard from "./GameCard";
 import { useEffect } from "react";
 import GameCardSkeleton from "./GameCardSkeleton";
+import GameCardContainer from "./GameCardContainer";
 
 const GameGrid = () => {
   const { games, error, isLoading, setGames } = useGames();
-  const cardSkeleton = [1, 2, 3, 4, 5, 6, 7, 8];
+  const cardSkeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   return (
     <>
       {error && <p className="text-danger">{error}</p>}
@@ -16,9 +17,16 @@ const GameGrid = () => {
         padding="10px"
         gap={10}
       >
-        {isLoading && cardSkeleton.map((c) => <GameCardSkeleton key={c} />)}
+        {isLoading &&
+          cardSkeleton.map((c) => (
+            <GameCardContainer key={c}>
+              <GameCardSkeleton />
+            </GameCardContainer>
+          ))}
         {games.map((game) => (
-          <GameCard game={game} key={game.id} />
+          <GameCardContainer key={game.id}>
+            <GameCard game={game} />
+          </GameCardContainer>
         ))}
       </SimpleGrid>
     </>
