@@ -39,7 +39,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 objectFit={"cover"}
               />
               <Button
-                fontSize={selectedGenre?.id === genre.id ? "3xl" : "lg"}
+                fontSize={selectedGenre?.id === genre.id ? "xl" : "lg"}
                 fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
                 variant={"plain"}
                 paddingX={"-1.5"}
