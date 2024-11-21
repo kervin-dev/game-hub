@@ -9,8 +9,8 @@ interface Props {
 }
 
 const PlatformSelector = ({ onSelectPlatform, setSelectedPlatform }: Props) => {
-  const { data } = usePlatforms();
-
+  const { data, error } = usePlatforms();
+  if (error) return null;
   return (
     <MenuRoot>
       {/* @ts-ignore */}
