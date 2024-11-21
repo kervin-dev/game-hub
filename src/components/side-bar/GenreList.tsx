@@ -1,4 +1,4 @@
-import { HStack, Image, List, Text } from "@chakra-ui/react";
+import { Heading, HStack, Image, List, Text } from "@chakra-ui/react";
 import useGenre, { Genre } from "../../hooks/useGenre";
 import getCroppedImageUrl from "../../services/image-url";
 import GenreListSkeleton from "./GenreListSkeleton";
@@ -18,6 +18,9 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   // if (isLoading) return <Spinner size="lg" borderWidth={4} />;
   return (
     <>
+      <Heading size="2xl" marginBottom={2} marginTop={5}>
+        Genres
+      </Heading>
       <List.Root variant={"plain"}>
         {/* For skeleton loading animation */}
         {isLoading &&
@@ -33,6 +36,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 boxSize="32px"
                 borderRadius={4}
                 src={getCroppedImageUrl(genre.image_background)}
+                objectFit={"cover"}
               />
               <Button
                 fontSize={selectedGenre?.id === genre.id ? "3xl" : "lg"}
@@ -40,6 +44,9 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 variant={"plain"}
                 paddingX={"-1.5"}
                 onClick={() => onSelectGenre(genre)}
+                whiteSpace={"normal"}
+                textAlign="left"
+                maxWidth={"150px"}
               >
                 {genre.name}
               </Button>
