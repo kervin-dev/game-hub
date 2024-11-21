@@ -5,11 +5,12 @@ import {
   FaApple,
   FaLinux,
   FaAndroid,
+  FaNeos,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import { BsNintendoSwitch } from "react-icons/bs";
 import { BsGlobe } from "react-icons/bs";
-import { HiHeart } from "react-icons/hi";
+import { SiAtari, SiCommodore, SiSega, SiWeb3Dotjs } from "react-icons/si";
 
 interface Props {
   slug: string;
@@ -28,6 +29,11 @@ const PlatformIcon = ({ slug, color }: Props) => {
       {slug === "ios" && <MdPhoneIphone color={color} />}
       {slug === "nintendo" && <BsNintendoSwitch color={color} />}
       {slug === "web" && <BsGlobe color={color} />}
+      {slug === "atari" && <SiAtari color={color} />}
+      {slug === "sega" && <SiSega color={color} />}
+      {slug === "commodore-amiga" && <SiCommodore color={color} />}
+      {slug === "neo-geo" && <FaNeos color={color} />}
+      {slug === "3do" && <SiWeb3Dotjs color={color} />}
     </>
   );
 };
