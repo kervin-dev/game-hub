@@ -22,7 +22,7 @@ const PlatformSelector = ({ onSelectPlatform, setSelectedPlatform }: Props) => {
       </MenuTrigger>
       {/* @ts-ignore */}
       <MenuContent>
-        {data.map((platform) => (
+        {data?.results.map((platform) => (
           // @ts-ignore
           <MenuItem
             key={platform.id}
