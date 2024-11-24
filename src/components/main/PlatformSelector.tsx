@@ -1,6 +1,6 @@
-import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "../ui/menu";
-import usePlatforms, { Platform } from "../../hooks/usePlatforms";
 import { BsChevronDown } from "react-icons/bs";
+import usePlatforms, { Platform } from "../../hooks/usePlatforms";
+import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "../ui/menu";
 import { Button } from "../ui/button";
 
 interface Props {
