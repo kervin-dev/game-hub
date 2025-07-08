@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
-import { InputGroup } from "../ui/input-group";
-import { LuSearch } from "react-icons/lu";
-import { Input } from "@chakra-ui/react";
+import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
+import { Input } from "@chakra-ui/react";
+import { InputGroup } from "../ui/input-group";
 
 interface Props {
   onSearch: (searchText: string) => void;

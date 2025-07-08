@@ -1,6 +1,5 @@
-import { HStack, Text, Icon } from "@chakra-ui/react";
-import { Platform } from "../../hooks/useGames";
-import { IconType } from "react-icons/lib";
+import { HStack } from "@chakra-ui/react";
+import { Platform } from "../../hooks/usePlatforms";
 import PlatformIcon from "./PlatformIcon";
 
 interface Props {
